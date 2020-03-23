@@ -21,6 +21,9 @@ public class JpaRunner implements ApplicationRunner {
     @Autowired
     private CommentRepository commentRepository;
 
+    @Autowired
+    private KiChang kiChang;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Post post = new Post();
@@ -35,5 +38,7 @@ public class JpaRunner implements ApplicationRunner {
         postRepository.save(post);
         commentRepository.save(comment);
 
+        System.out.println("==================================");
+        System.out.println(kiChang.getName());
     }
 }
